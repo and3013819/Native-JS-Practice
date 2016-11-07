@@ -41,7 +41,7 @@ a prototype for the object to be created once the constructor is called. The ben
 
 这段话非常经典，而且已经很明确地阐述了实例和原型之间的关系了。
 
-每个**函数**都有一个 prototype 属性，记住，只有函数才有，对象没有，而每个对象都会拥有一个 \__proto__ 属性（后面会对 \__proto__ 属性详细讲解）。因为在 JS 中，函数也是对象，所以，函数也会拥有一个 \__proto__ 属性。也就是说函数会同时拥有 prototype 和 \__proto__ 属性，而对象只有 \__proot__ 属性。（大家仔细体会和品味这段话，或者先记下来，之后看完整个系列文章之后再回头来看这句话，非常重要）
+每个**函数**都有一个 prototype 属性，记住，只有函数才有，对象没有，而每个对象都会拥有一个 \__proto__ 属性（后面会对 \__proto__ 属性详细讲解）。因为在 JS 中，函数也是对象，所以，函数也会拥有一个 \__proto__ 属性。也就是说函数会同时拥有 prototype 和 \__proto__ 属性，而对象只有 \__proto__ 属性。（大家仔细体会和品味这段话，或者先记下来，之后看完整个系列文章之后再回头来看这句话，非常重要）
 
 构造器作为一个普通函数，如上面所说，会拥有一个 prototype 的属性。这个 prototype 属性是个对象，这个对象就是原型对象（下文说原型对象都指的是这个对象）。原型对象会拥有很多属性和方法，而一旦使用 new 操作符调用构造器函数的时候，所有的实例就会拥有构造器函数的 prototype 属性上的所有属性和方法，也就是原型对象上的所有属性和方法，这样就实现了原型继承。怎么样，很简单吧？也就是在 [3_prototypePattern.html](https://github.com/oakland/Native-JS-Practice/blob/master/11-learnOOPfromCircles.js/1-prototypeInJS/3_prototypePattern.html) 中，p1.sayName 和 p2.sayName 是同一个 sayName。当通过 `Person.prototype` 来修改 sayName 属性的时候，所有的实例都会受到影响，因为所有的实例都是指向这个方法的。
 
